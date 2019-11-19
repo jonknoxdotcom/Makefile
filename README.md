@@ -26,15 +26,15 @@ The general syntax of a Makefile rule is as follows:
 
 ##  Simple make file for our project (dependency tree structure)
 ```
-all: main.o module.o 				 //dependencies of target all 
+all: main.o module.o 				 //dependencies of target all
 	gcc main.o module.o -o target_bin	 //action to make target all
 main.o: main.c module.h 			 //dependencies fo target main.o 
-	gcc -I . -c main.c 			 //action to make target main.o,
+	gcc -I . -c main.c 			 //action to make target main.o
 module.o: module.c module.h
 
 	gcc -I . -c module.c 			//-I indicate header file locations
 clean:						This target has no dependencies
-	rm -rf *.o 
+	rm -rf *.o
 	rm target_bin
 ```
 
